@@ -350,20 +350,24 @@ template {
 /*-----------------------------*/
 /*       Layout Styles         */
 /*-----------------------------*/
-/* ---- Body ----*/
-main {
-  width: 90%;
-  margin: auto;
-}
-
 /* ---- Searchbar --- */
 form {
   display: flex;
   display: -webkit-flex;
   display: -ms-flexbox;
   justify-content: center;
+  margin: 40px 0;
 }
 
+input {
+  padding: 10px;
+  border-radius: 9px;
+  border: 2px solid lightgrey;
+}
+
+/*-----------------------------*/
+/*   Gallery Styles    */
+/*-----------------------------*/
 /* ---- Gallery ---- */
 .gallery {
   display: flex;
@@ -371,8 +375,32 @@ form {
   display: -ms-flexbox;
   flex-flow: wrap;
   -ms-flex-flow: wrap;
-  justify-content: space-between;
-  align-items: space-between;
+  justify-content: center;
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1024px;
+}
+.gallery__pair {
+  display: flex;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  flex-flow: wrap;
+  -ms-flex-flow: wrap;
+  justify-content: space-around;
+  flex-basis: 50%;
+}
+.gallery__pair > a {
+  margin-bottom: 20px;
+}
+@media (min-width: 1024px) {
+  .gallery__pair > a:nth-child(n+1):nth-child(-n+8) {
+    margin-bottom: 50px;
+  }
+}
+
+/* -- Custom lightgallery Styles -- */
+.lg-outer .lg-thumb {
+  margin: 0 auto;
 }
 
 /*# sourceMappingURL=styles.css.map */

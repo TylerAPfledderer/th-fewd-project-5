@@ -4,6 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Photo Gallery | Tech Degree Project 5</title>
+
+        <!-- Add CDN stylesheet for 'lightgallery plugin -->
+        <link rel="stylesheet" href="css/lightGallery.css" />
+
         <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
@@ -11,20 +15,50 @@
             <form role="search">
                 <input type="search" id="imgSearch" placeholder="Search(16pt)" name="q" aria-label="Search for photo here.">
             </form>
-            <section class="gallery">
-                <img src="photos/thumbnails/01.jpg" alt="" class="gallery__img">
-                <img src="photos/thumbnails/02.jpg" alt="" class="gallery__img">
-                <img src="photos/thumbnails/03.jpg" alt="" class="gallery__img">
-                <img src="photos/thumbnails/04.jpg" alt="" class="gallery__img">
-                <img src="photos/thumbnails/05.jpg" alt="" class="gallery__img">
-                <img src="photos/thumbnails/06.jpg" alt="" class="gallery__img">
-                <img src="photos/thumbnails/07.jpg" alt="" class="gallery__img">
-                <img src="photos/thumbnails/08.jpg" alt="" class="gallery__img">
-                <img src="photos/thumbnails/09.jpg" alt="" class="gallery__img">
-                <img src="photos/thumbnails/10.jpg" alt="" class="gallery__img">
-                <img src="photos/thumbnails/11.jpg" alt="" class="gallery__img">
-                <img src="photos/thumbnails/12.jpg" alt="" class="gallery__img">
+            <section id="lightgallery" class="gallery">
+                <div class="gallery__pair">
+                    <a href="img/01.jpg"><img src="img/thumbnails/01.jpg" title="Hay Bales" alt="I love hay bales. Took this snap on a drive through the countryside past some straw fields."></a>
+                    <a href="img/02.jpg"><img src="img/thumbnails/02.jpg" alt=""></a>
+                </div>
+                <div class="gallery__pair">
+                    <a href="img/03.jpg"><img src="img/thumbnails/03.jpg" alt=""></a>
+                    <a href="img/04.jpg"><img src="img/thumbnails/04.jpg" alt=""></a>
+                </div>
+                <div class="gallery__pair">
+                    <a href="img/05.jpg"><img src="img/thumbnails/05.jpg" alt=""></a>
+                    <a href="img/06.jpg"><img src="img/thumbnails/06.jpg" alt=""></a>
+                </div>
+                <div class="gallery__pair">
+                    <a href="img/07.jpg"><img src="img/thumbnails/07.jpg" alt=""></a>
+                    <a href="img/08.jpg"><img src="img/thumbnails/08.jpg" alt=""></a>
+                </div>
+                <div class="gallery__pair">
+                    <a href="img/09.jpg"><img src="img/thumbnails/09.jpg" alt=""></a>
+                    <a href="img/10.jpg"><img src="img/thumbnails/10.jpg" alt=""></a>
+                </div>
+                <div class="gallery__pair">
+                    <a href="img/11.jpg"><img src="img/thumbnails/11.jpg" alt=""></a>
+                    <a href="img/12.jpg"><img src="img/thumbnails/12.jpg" alt=""></a>
+                </div>
             </section>
         </main>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
+        <!-- Add lightgallery plugin -->
+        <script src="js/lightgallery-all.min.js"></script>
+        <!-- Add extensions to lightgallery plugin -->
+        <script src="js/lg-thumbnail.min.js"></script>
+        <script src="js/lg-fullscreen.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+
+                // Call the lightgallery plugin.
+                $("#lightgallery").lightGallery({
+                    thumbnail: true,
+                    currentPagerPosition: 'left'
+                }); 
+            });
+        </script>
     </body>
 </html>

@@ -1,0 +1,33 @@
+/*-----------------------------*/
+/*   Gallery Styles    */
+/*-----------------------------*/
+
+/* ---- Gallery ---- */
+
+.gallery {
+    @include flexy($wrap: wrap, $just: center);
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1024px;
+
+    &__pair {
+        @include flexy($wrap: wrap, $just: space-around);
+        flex-basis: 50%;
+    
+        > a {
+            margin-bottom: 20px;
+            @media (min-width: 1024px) {
+                &:nth-child(n+1):nth-child(-n+8) {
+                    margin-bottom: 50px;
+                }        
+            }
+        }
+    
+    }
+}
+
+/* -- Custom lightgallery Styles -- */
+
+.lg-outer .lg-thumb {
+    margin: 0 auto;
+}

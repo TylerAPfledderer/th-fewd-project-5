@@ -2,13 +2,6 @@
 /*       Layout Styles         */
 /*-----------------------------*/
 
-/* ---- Body ----*/
-
-main {
-    width: 90%;
-    margin: auto;
-}
-
 /* ---- Searchbar --- */
 
 form {
@@ -20,16 +13,4 @@ input {
     padding: 10px;
     border-radius: 9px;
     border: 2px solid lightgrey;
-}
-
-/* ---- Gallery ---- */
-
-.gallery {
-    @include flexy($wrap: wrap, $just: space-between, $align: space-between);
-
-    &__img {
-        &:nth-child(n+1):nth-child(-n+8) {
-            margin-bottom: 50px;
-        }
-    }
 }
