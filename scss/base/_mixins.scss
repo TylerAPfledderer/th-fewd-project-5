@@ -1,0 +1,13 @@
+//-----------------------------
+//            Mixins           
+//-----------------------------
+
+@mixin flexy($dis: flex, $dir: null, $wrap: null, $just: null, $align: null) {
+    display: $dis;
+    display: -webkit-#{$dis};
+    display: -ms-#{$dis}box;
+    flex-flow: $dir $wrap;
+    -ms-flex-flow: $dir $wrap;
+    justify-content: $just;
+    align-items: $align;
+}
