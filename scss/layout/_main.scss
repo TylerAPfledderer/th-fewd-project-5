@@ -4,12 +4,9 @@
 
 /* ---- Searchbar --- */
 
-form {
-    @include flexy($just: center);
-    margin: 40px 0;
-}
-
 input {
+    display: block;
+    margin: 40px auto;
     padding: 10px;
     border-radius: 9px;
     border: 2px solid lightgrey;

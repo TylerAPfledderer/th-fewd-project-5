@@ -5,6 +5,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lato&display=swap");
 html {
   line-height: 1.15;
   /* 1 */
@@ -347,19 +348,22 @@ template {
   display: none;
 }
 
+h4 {
+  font-family: "Fredoka One", "Arial Black", "Arial Bold", Gadget, sans-serif;
+  letter-spacing: 2px;
+}
+
+p {
+  font-family: Lato, Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+
 /*-----------------------------*/
 /*       Layout Styles         */
 /*-----------------------------*/
 /* ---- Searchbar --- */
-form {
-  display: flex;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  justify-content: center;
-  margin: 40px 0;
-}
-
 input {
+  display: block;
+  margin: 40px auto;
   padding: 10px;
   border-radius: 9px;
   border: 2px solid lightgrey;
@@ -375,32 +379,41 @@ input {
   display: -ms-flexbox;
   flex-flow: wrap;
   -ms-flex-flow: wrap;
-  justify-content: center;
-  width: 90%;
+  justify-content: space-evenly;
   margin: 0 auto;
   max-width: 1024px;
+  width: 100%;
 }
-.gallery__pair {
-  display: flex;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  flex-flow: wrap;
-  -ms-flex-flow: wrap;
-  justify-content: space-around;
-  flex-basis: 50%;
+.gallery__link {
+  display: inline-block;
+  padding: 0 20px 20px;
 }
-.gallery__pair > a {
-  margin-bottom: 20px;
+.gallery__link, .gallery__link img {
+  width: 100%;
 }
-@media (min-width: 1024px) {
-  .gallery__pair > a:nth-child(n+1):nth-child(-n+8) {
-    margin-bottom: 50px;
+@media (min-width: 359px) {
+  .gallery {
+    width: 90%;
+  }
+  .gallery__link {
+    width: 200px;
+    padding-bottom: 50px;
   }
 }
 
-/* -- Custom lightgallery Styles -- */
+/* -- Custom lightgallery Override Styles -- */
 .lg-outer .lg-thumb {
   margin: 0 auto;
+}
+
+.lg-sub-html {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.lg-sub-html h4 {
+  font-size: 2em;
+}
+.lg-sub-html p {
+  font-size: 1.25em;
 }
 
 /*# sourceMappingURL=styles.css.map */

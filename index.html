@@ -13,35 +13,50 @@
     <body>
         <main>
             <form role="search">
-                <input type="search" id="imgSearch" placeholder="Search(16pt)" name="q" aria-label="Search for photo here.">
+                <input type="search" id="search-bar" onkeyup="search_bar()" placeholder="Search for a photo." name="q" aria-label="Search for photo here.">
             </form>
             <section id="lightgallery" class="gallery">
-                <div class="gallery__pair">
-                    <a href="img/01.jpg"><img src="img/thumbnails/01.jpg" title="Hay Bales" alt="I love hay bales. Took this snap on a drive through the countryside past some straw fields."></a>
-                    <a href="img/02.jpg"><img src="img/thumbnails/02.jpg" alt=""></a>
-                </div>
-                <div class="gallery__pair">
-                    <a href="img/03.jpg"><img src="img/thumbnails/03.jpg" alt=""></a>
-                    <a href="img/04.jpg"><img src="img/thumbnails/04.jpg" alt=""></a>
-                </div>
-                <div class="gallery__pair">
-                    <a href="img/05.jpg"><img src="img/thumbnails/05.jpg" alt=""></a>
-                    <a href="img/06.jpg"><img src="img/thumbnails/06.jpg" alt=""></a>
-                </div>
-                <div class="gallery__pair">
-                    <a href="img/07.jpg"><img src="img/thumbnails/07.jpg" alt=""></a>
-                    <a href="img/08.jpg"><img src="img/thumbnails/08.jpg" alt=""></a>
-                </div>
-                <div class="gallery__pair">
-                    <a href="img/09.jpg"><img src="img/thumbnails/09.jpg" alt=""></a>
-                    <a href="img/10.jpg"><img src="img/thumbnails/10.jpg" alt=""></a>
-                </div>
-                <div class="gallery__pair">
-                    <a href="img/11.jpg"><img src="img/thumbnails/11.jpg" alt=""></a>
-                    <a href="img/12.jpg"><img src="img/thumbnails/12.jpg" alt=""></a>
-                </div>
+                    <a href="img/01.jpg" title="Hay Bales" class="gallery__link" data-sub-html="<h4>Hay Bales</h4><p>I love hay bales. Took this snap on a drive through the countryside past some straw fields.</p>">
+                        <img src="img/thumbnails/01.jpg" alt="Image of a Countryside with Hay Bales">
+                    </a>
+                    <a href="img/02.jpg" title="Lake" class="gallery__link" data-sub-html="<h4>Lake</h4><p>The lake was so calm today. We had a great view of the snow on the mountains from here.</p>">
+                        <img src="img/thumbnails/02.jpg" alt="">
+                    </a>
+                    <a href="img/03.jpg" title="Canyon" class="gallery__link" data-sub-html="<h4>Canyon</h4><p>I hiked to the top of the mountain and got this picture of the canyon and trees below.</p>">
+                        <img src="img/thumbnails/03.jpg" alt="">
+                    </a>
+                    <a href="img/04.jpg" title="Iceberg" class="gallery__link" data-sub-html="<h4>Iceberg</h4><p>It was amazing to see an iceberg up close, it was so cold but didn’t snow today.</p>">
+                        <img src="img/thumbnails/04.jpg" alt="">
+                    </a>
+                    <a href="img/05.jpg" title="Desert" class="gallery__link" data-sub-html="<h4>Desert</h4><p>The red cliffs were beautiful. It was really hot in the desert but we did a lot of walking through the canyons.<p>">
+                        <img src="img/thumbnails/05.jpg" alt="The red cliffs were beautiful. It was really hot in the desert but we did a lot of walking through the canyons.">
+                    </a>
+                    <a href="img/06.jpg" title="Fall" class="gallery__link" data-sub-html="<h4>Fall</h4><p>Fall is coming, I love when the leaves on the trees start to change color.">
+                        <img src="img/thumbnails/06.jpg" alt="">
+                    </a>
+                    <a href="img/07.jpg" title="Plantation" class="gallery__link" data-sub-html="<h4>Plantation</h4><p>I drove past this plantation yesterday, everything is so green!</p>">
+                        <img src="img/thumbnails/07.jpg" alt="">
+                    </a>
+                    <a href="img/08.jpg" title="Dunes" class="gallery__link" data-sub-html="<h4>Dunes</h4><p>My summer vacation to the Oregon Coast. I love the sandy dunes!</p>">
+                        <img src="img/thumbnails/08.jpg" alt="">
+                    </a>
+                    <a href="img/09.jpg" title="Countryside Lane" class="gallery__link" data-sub-html="<h4>Countryside Lane</h4><p>We enjoyed a quiet stroll down this countryside lane.</p>">
+                        <img src="img/thumbnails/09.jpg" alt="">
+                    </a>
+                    <a href="img/10.jpg" title="Sunset" class="gallery__link" data-sub-html="<h4>Sunset</h4><p>Sunset at the coast! The sky turned a lovely shade of orange.</p>">
+                        <img src="img/thumbnails/10.jpg" alt="">
+                    </a>
+                    <a href="img/11.jpg" title="Cave" class="gallery__link" data-sub-html="<h4>Cave</h4><p>I did a tour of a cave today and the view of the landscape below was breathtaking.</p>">
+                        <img src="img/thumbnails/11.jpg" alt="">
+                    </a>
+                    <a href="img/12.jpg" title="Bluebells" class="gallery__link" data-sub-html="<h4>Bluebells</h4><p>I walked through this meadow of bluebells and got a good view of the snow on the mountain before the fog came in.</p>">
+                        <img src="img/thumbnails/12.jpg" alt="">
+                    </a>
             </section>
         </main>
+
+        <script src="js/searchbar.js"></script>
+
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
 
         <!-- Add lightgallery plugin -->
@@ -50,13 +65,14 @@
         <script src="js/lg-thumbnail.min.js"></script>
         <script src="js/lg-fullscreen.min.js"></script>
 
-        <script type="text/javascript">
+        <script>
             $(document).ready(function() {
 
                 // Call the lightgallery plugin.
                 $("#lightgallery").lightGallery({
                     thumbnail: true,
-                    currentPagerPosition: 'left'
+                    currentPagerPosition: 'left',
+                    showThumbByDefault: false
                 }); 
             });
         </script>
