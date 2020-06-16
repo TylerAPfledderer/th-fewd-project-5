@@ -1,4 +1,4 @@
-function search_bar() {
+function searchBar() {
   // Get user input in search field and set text to lowercase.
 	let input = document.getElementById('search-bar').value;
   input = input.toLowerCase();
