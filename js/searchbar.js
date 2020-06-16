@@ -1,17 +1,21 @@
 function search_bar() {
 	let input = document.getElementById('search-bar').value;
-	input = input.toLowerCase();
-  let item = document.querySelectorAll('.gallery__link');
+  input = input.toLowerCase();
+  console.log(input);
+  let caption = document.getElementById('captionGroup');
+  let capText = caption.querySelectorAll('.caption > p');
+
+  let image = document.querySelectorAll('.gallery__link');
   
-  for (let i = 0; i < item.length; i++) {
-    let search = item[i]
-      .getAttribute("title")
+  for (let i = 0; i < capText.length; i++) {
+    let search = capText[i]
+      .textContent
       .toLowerCase()
-      .startsWith(input);
-    if (!search) {
-      item[i].style.display = "none";
+      .includes(input);
+    if (!search || !input === null) {
+      image[i].style.display = "none";
     } else {
-      item[i].style.display = "inline-block";
+      image[i].style.display = "inline-block";
     }
     
   }
