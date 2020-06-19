@@ -1,10 +1,10 @@
 function searchBar() {
   // Get user input in search field and set text to lowercase.
-	let input = document.getElementById('search-bar').value;
+  let input = document.querySelector('#search-bar').value;
   input = input.toLowerCase();
 
   // Grab array of paragraph tags that contain caption text
-  let caption = document.getElementById('captionGroup');
+  let caption = document.querySelector('#captionGroup');
   let capText = caption.querySelectorAll('.caption > p');
 
   // Grab array of the anchor tags containing the photo thumbnails
@@ -26,4 +26,8 @@ function searchBar() {
     }
   }
 }
+
+// Call searchBar() when entering text into input field.
+const searchInput = document.querySelector("#search-bar");
+searchInput.addEventListener('keyup', searchBar);
 
