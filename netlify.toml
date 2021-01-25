@@ -1,4 +1,4 @@
 [[redirects]]
-  from = "/"
+  from = "/*"
   to = "tylerpweb.dev/photo-gallery"
   status = 200
