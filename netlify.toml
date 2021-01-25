@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/"
+  to = "tylerpweb.dev/photo-gallery"
+  status = 200
